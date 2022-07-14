@@ -47,6 +47,7 @@ int soccheckWARNING(float soc)
     if(soc <= 24)
     {
         printf("Warning: Approaching discharge\n");
+        
         return 1;
     }
     else if(soc >= 76)
