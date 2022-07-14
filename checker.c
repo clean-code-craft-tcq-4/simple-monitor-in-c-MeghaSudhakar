@@ -166,4 +166,6 @@ int main()
     printf("\n\n");
     batteryIsOk(100, 81, 0.7);
     printf("\n\n");
+    batteryIsOk(101, 81, 0.7);
+    printf("\n\n");
 }
