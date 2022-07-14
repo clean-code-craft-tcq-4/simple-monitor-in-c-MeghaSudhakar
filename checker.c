@@ -89,13 +89,44 @@ int chargeRatecheckNEG(float chargeRate )
     }
 }
 
+float ConvertToCelcius(float farenheit) 
+{
+    float celcius = (farenheit - 32) * 5 / 9;
+    printf("\nconverted: %.1f celcius.\n",celcius);
+    return celcius;
+}
+
+
+float temperature_Unit_Check(float unit)
+{
+    float converted_temperature =0;
+    if(unit >=0 || unit <=100)
+    {
+        return unit;
+    }
+    else if (unit > 100)
+    {
+        converted_temperature = ConvertToCelcius(unit);
+        return converted_temperature;
+    }
+    else
+    {
+        return unit;
+    }
+        
+}
+
 int batteryIsOk(float temperature, float soc, float chargeRate)
 {
     int  temp = 0;
     int socc = 0;
     int charge = 0;
     int result =0;
-    temp = temperaturecheckNEG(temperature);
+    float unit =0;
+    
+    unit = temperature_Unit_Check(temperature);
+    
+    temp = temperaturecheckNEG(unit);
     socc = soccheckNEG(soc);
     charge = chargeRatecheckNEG(chargeRate);
     printf("temp = %d socc = %d  charge = %d\n",temp,socc,charge);
@@ -136,5 +167,7 @@ int main()
     batteryIsOk(44, 79, 0.7);
     printf("\n\n");
     batteryIsOk(46, 81, 0.7);
+    printf("\n\n");
+    batteryIsOk(100, 81, 0.7);
     printf("\n\n");
 }
