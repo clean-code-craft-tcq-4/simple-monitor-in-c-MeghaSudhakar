@@ -12,6 +12,20 @@ Electric Vehicles have BMS - Battery Management Systems
 
 [Here is a reference for the maximum charge rate](https://www.electronics-notes.com/articles/electronic_components/battery-technology/li-ion-lithium-ion-charging.php#:~:text=Constant%20current%20charge:%20In%20the%20first%20stage%20of,rate%20of%20a%20maximum%20of%200.8C%20is%20recommended.)
 
+### Extension 1: Early Warning
+Customers need _early warnings_ to take action,
+in addition to the alarm that you print after the limit is breached.
+Introduce a 'warning' level with a tolerance of 5% of the upper-limit.
+
+Example: If the SoC needs to be between 20 and 80, the warning-tolerance is `5% of 80` = `4`.
+Warnings need to be displayed in these ranges:
+- `20` to `20+4` Warning: Approaching discharge
+- `80-4` to `80` Warning: Approaching charge-peak
+
+Same for Temperature and Charge-rate.
+
+Keep in mind: Though we are starting with warning levels for all parameters, customers may give feedback to have warnings only for _some_ parameters and not others. Minimize the change needed for such 'tuning'.
+
 ## Possible purpose
 
 - Protect batteries while charging:
