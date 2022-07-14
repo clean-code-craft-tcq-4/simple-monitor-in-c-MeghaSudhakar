@@ -42,11 +42,22 @@ int soccheckNEG(float soc)
     
 }
 
+int soccheckWARNING(float soc)
+{
+    
+}
+
 int soccheckPOS(float soc)
 {
-    if(soc >= 20 || soc <= 80)
+    if(soc >= 20)
     {
-        return 1;
+        int result = soccheckWARNING(soc);
+        return result;
+    }
+    else if(soc <=80)
+    {
+        int result = soccheckWARNING(soc);
+        return result;
     }
 }
 
