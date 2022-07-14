@@ -100,7 +100,7 @@ float ConvertToCelcius(float farenheit)
 float temperature_Unit_Check(float unit)
 {
     float converted_temperature =0;
-    if(unit <= 100 || unit >= 0)
+    if(unit <= 100 && unit >= 0)
     {
         printf("\nPASSconverted: %f celcius.\n",unit);
         return unit;
