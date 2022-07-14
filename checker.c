@@ -102,11 +102,13 @@ float temperature_Unit_Check(float unit)
     float converted_temperature =0;
     if(unit >=0 || unit <=100)
     {
+        printf("\nconverted: %f celcius.\n",unit);
         return unit;
     }
     else 
     {
         converted_temperature = ConvertToCelcius(unit);
+        printf("\nconverted: %.1f celcius.\n",converted_temperature);
         return converted_temperature;
     }
       
