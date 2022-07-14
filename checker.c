@@ -104,16 +104,12 @@ float temperature_Unit_Check(float unit)
     {
         return unit;
     }
-    else if (unit > 100)
+    else 
     {
         converted_temperature = ConvertToCelcius(unit);
         return converted_temperature;
     }
-    else
-    {
-        return unit;
-    }
-        
+      
 }
 
 int batteryIsOk(float temperature, float soc, float chargeRate)
