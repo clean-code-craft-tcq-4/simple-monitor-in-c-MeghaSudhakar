@@ -44,6 +44,16 @@ int soccheckNEG(float soc)
 
 int soccheckWARNING(float soc)
 {
+    if(soc <= 24)
+    {
+        printf("Warning: Approaching discharge\n");
+        return 1;
+    }
+    else if(soc >= 76)
+    {
+        printf("Warning: Approaching charge-peak\n");
+        return 1;
+    }
     
 }
 
@@ -58,6 +68,9 @@ int soccheckPOS(float soc)
     {
         int result = soccheckWARNING(soc);
         return result;
+    }
+    else
+    {
     }
 }
 
